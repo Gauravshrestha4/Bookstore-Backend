@@ -23,11 +23,10 @@ jobs:
       - name: Setup linters
         run: yarn install
       
-      - name: Run linters for backend and app
+      - name: Run linters for backend
         uses: samuelmeuli/lint-action@v1.5.3
         with:
           github_token: ${{ secrets.github_token }}
           # Enable linters
           eslint: true
           eslint_extensions: ts
-          prettier: true
