@@ -1,8 +1,7 @@
-export class Bookstore {
-    static version = '1'
-    constructor() {}
-    add(a: number, b: number) {
-        console.log(`version ${Bookstore.version}`)
-        return a + b
-    }
+export default class Bookstore {
+  static version = "1";
+
+  static add(a: number, b: number): number {
+    return a + b;
+  }
 }
