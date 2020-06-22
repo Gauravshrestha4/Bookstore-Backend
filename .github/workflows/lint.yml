@@ -21,7 +21,7 @@ jobs:
           node-version: '14.3.0'
 
       - name: Setup linters
-        run: npm install
+        run: yarn install
       
       - name: Run linters for backend and app
         uses: samuelmeuli/lint-action@v1.5.3
