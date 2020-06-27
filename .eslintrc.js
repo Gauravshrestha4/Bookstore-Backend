@@ -12,7 +12,7 @@ module.exports = {
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
-  ignorePatterns: ["*.js", "*.json", "tests/**/*"],
+  ignorePatterns: ["*.js", "*.json", "tests/**/*","dist"],
   rules: {
     "import/extensions": [
       "error",

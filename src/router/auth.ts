@@ -1,10 +1,11 @@
 import * as express from "express";
 import { Request, Response } from "express";
-import {signUp,login} from '../controllers/auth'
-const router=express.Router()
+import { signUp, login } from "../controllers/auth";
 
-router.post('/sign-up',signUp)
-router.post('/login', login)
+const router = express.Router();
+
+router.post("/sign-up", signUp);
+router.post("/login", login);
 
 router.post("/login", (req: Request, res: Response) => {
   // check is user exists
