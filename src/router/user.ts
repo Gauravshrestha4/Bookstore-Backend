@@ -1,40 +1,9 @@
 import * as express from "express";
-import { Request, Response } from "express";
+import { getUserById, getAllUsers } from "../controllers/user";
 
-const router=express.Router()
+const router = express.Router();
 
-const users = [
-    {
-        id: 1,
-        name: 'gaurav',
-        age: 24,
-        address:'abc location'
-    },
-    {
-        id: 2,
-        name: 'abhinav',
-        age: 23,
-        address:'xyz location'
-    },
-    {
-        id: 3,
-        name: 'shourya',
-        age: 24,
-        address:'new location'
-    },
-]
-router.get('/:userid', (req :Request, res:Response, next) => {
-    console.log('sign up route');
-    // check is user exists 
-    // if not create a new user and log in 
-    // send user details in response 
-    const userId = req.params.userid
-    const user=users.find(user=>user.id==parseInt(userId))
-    res.json(user)
-})
-router.get('/', (req :Request, res:Response, next) => {
-   
-    res.json(users)
-})
+router.get('/:userid', getUserById);
+router.get('/', getAllUsers);
 
 export default router;

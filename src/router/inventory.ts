@@ -1,36 +1,11 @@
 import * as express from "express";
-import { Request, Response } from "express";
+import { getProductById, getAllProducts, createProduct, updateProduct } from "../controllers/inventory";
 
-const router=express.Router()
+const router = express.Router();
 
-const inventory = [
-    {
-        id: 1,
-        name: 'oxford-dict',
-        price: 200,
-        currency:'Rs',
-    },
-    {
-        id: 2,
-        name: 'abc Novel',
-        price: 400,
-    },
-    {
-        id: 3,
-        name: 'Notebook',
-        price: 70,
-        currency:'Rs',
-    },
-]
-router.get('/:pid', (req :Request, res:Response, next) => {
-    console.log('product route');
-    const productId = req.params.pid
-    const product=inventory.find(product=>product.id==parseInt(productId))
-    res.json(product)
-})
-router.get('/', (req :Request, res:Response, next) => {
-   
-    res.json(inventory)
-})
+router.get('/:pid', getProductById);
+router.get('/', getAllProducts);
+router.post('/', createProduct);
+router.patch('/:pid', updateProduct);
 
 export default router;
