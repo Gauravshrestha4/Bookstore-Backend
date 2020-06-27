@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --watch",
     "start:dev": "NODE_ENV=development webpack",
-    "run:dev": "NODE_ENV=development nodemon dist/main.js",
+    "run:dev": "NODE_ENV=development nodemon dist/main.js ",
     "test": "jest",
     "lint": "eslint . --fix"
   },
